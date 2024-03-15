@@ -33,7 +33,7 @@ public class PokemonGame {
     public static void main(String[] args) {
         Pokemon p2 = new Pokemon("Squirtle", 70);  // parameter constructor
 
-        Pokemon p1 = new Pokemon();  // default consturctor
+        Pokemon p1 = new Pokemon();  // default constructor
         //p1.hp = 50;  // hp has private access in Pokemon
         p1.setHp(50);
         p1.setName("Pikachu");
