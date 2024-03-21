@@ -6,7 +6,6 @@ public class PokemonGame {
 
         Pokemon p1 = new Pokemon();
         System.out.println(p1.getName() + "'s health is " + p1.getHp() + ".");
-        //p1.hp = 50;
         p1.setHp(50);
         p1.setName("Pikachu");
         System.out.println(p1.getName() + "'s health is " + p1.getHp() + ".");
