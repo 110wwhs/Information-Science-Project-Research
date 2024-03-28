@@ -25,7 +25,7 @@ public class Pokemon{
     }
 
     public int getHp() {
-        return hp;
+        return hp;  
     }
 
     public void setHp(int hp) {
