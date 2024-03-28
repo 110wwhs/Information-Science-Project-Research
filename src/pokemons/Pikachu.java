@@ -13,4 +13,9 @@ public class Pikachu extends Pokemon {
         super.info();
         System.out.println("Type: Electric");
     }
+
+    @Override
+    public void attack() {
+        System.out.println("Lightning attack!");
+    }
 }
