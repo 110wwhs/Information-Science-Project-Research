@@ -1,9 +1,9 @@
 package pokemons;
 
 public class Charizard extends Pokemon {
-    public Charizard(String name, int hp, Wings wings) {
+    public Charizard(String name, int hp) {
         super(name, hp);
-        super.setFlyable(wings);
+        super.setFlyable(new Wings());
     }
 
     @Override

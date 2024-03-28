@@ -5,9 +5,9 @@ public class PokemonGame {
 //        Pokemon p1 = new Pokemon();
 //        p1.info();
 
-        Pikachu pika1 = new Pikachu("Pikachu", 50, new NoFly());
+        Pikachu pika1 = new Pikachu("Pikachu", 50);
 //        Squirtle s1 = new Squirtle("Squirtle", 70);
-        Charizard c1 = new Charizard("Charizard", 150, new Wings());
+        Charizard c1 = new Charizard("Charizard", 150);
 //        c1.setName("Charizard");
 //        c1.setHp(150);
 //        pika1.setFlyable(new NoFly());

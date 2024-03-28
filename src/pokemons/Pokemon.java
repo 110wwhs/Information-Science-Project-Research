@@ -11,6 +11,7 @@ public abstract class Pokemon{
     Flyable flyable; // has-a 관계
 
     public void performFlyable() {
+        System.out.print(this.getName());
         this.flyable.fly();
     }
 
