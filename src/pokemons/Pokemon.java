@@ -4,6 +4,16 @@ public abstract class Pokemon{
     private String name;
     private int hp;
 
+    public void setFlyable(Flyable flyable) {
+        this.flyable = flyable;
+    }
+
+    Flyable flyable; // has-a 관계
+
+    public void performFlyable() {
+        this.flyable.fly();
+    }
+
     public Pokemon() {
         this.name = "nameless";
         this.hp = 10;
