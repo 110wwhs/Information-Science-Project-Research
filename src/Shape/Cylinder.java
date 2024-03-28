@@ -1,3 +1,5 @@
+package Shape;
+
 public class Cylinder extends Circle{
     private double height;
 
@@ -20,7 +22,7 @@ public class Cylinder extends Circle{
 
     public double getVolume() {
         // return getArea() * height;
-        return Math.PI * radius * radius * height; // protected radius from Circle
+        return Math.PI * radius * radius * height; // protected radius from Shape.Shape.Circle
     }
 
 

@@ -1,3 +1,5 @@
+package Shape;
+
 public class Cuboid extends Rectangle {
     private double height;
     public Cuboid() {
