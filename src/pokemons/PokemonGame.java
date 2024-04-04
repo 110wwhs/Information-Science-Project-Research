@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class PokemonGame {
     public static void main(String[] args) {
         Random random = new Random();
-        random.setSeed(32);
+        random.setSeed(33);
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Choose your {Pokemonster. 1) Pikachu(default)  2) Squirtle  3) Charizard : ");
@@ -14,11 +14,11 @@ public class PokemonGame {
 
         Pokemon playerPokemon, wildPokemon;
         if(select == 1)
-            playerPokemon = new Pikachu();
+            playerPokemon = new Pikachu("Pikachu", 50);
         else if (select == 2)
-            playerPokemon = new Squirtle();
+            playerPokemon = new Squirtle("Squirtle", 55);
         else if (select == 3)
-            playerPokemon = new Charizard();
+            playerPokemon = new Charizard("Charizard", 74);
         else
             playerPokemon = new Pikachu(); // default
 
@@ -44,6 +44,15 @@ public class PokemonGame {
                 System.out.println("You ran away from the battle.");
             } else if (menu == 1){
                 playerPokemon.attack(wildPokemon);
+                if(wildPokemon.getHp() <= 0){
+                    System.out.println("You win!");
+                    break;
+                }
+                wildPokemon.attack(playerPokemon);
+                if(playerPokemon.getHp() <= 0){
+                    System.out.println("You lose!");
+                    break;
+                }
             }
         }
     }
