@@ -1,47 +1,50 @@
 package pokemons;
 
+import java.util.Random;
+import java.util.Scanner;
+
 public class PokemonGame {
     public static void main(String[] args) {
-//        Pokemon p1 = new Pokemon();
-//        p1.info();
+        Random random = new Random();
+        random.setSeed(32);
 
-        Pikachu pika1 = new Pikachu("Pikachu", 50);
-//        Squirtle s1 = new Squirtle("Squirtle", 70);
-        Charizard c1 = new Charizard("Charizard", 150);
-//        c1.setName("Charizard");
-//        c1.setHp(150);
-//        pika1.setFlyable(new NoFly());
-//        c1.setFlyable(new Wings());
-//        c1.performFlyable();
-        pika1.performFlyable();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Choose your {Pokemonster. 1) Pikachu(default)  2) Squirtle  3) Charizard : ");
+        int select = scanner.nextInt();
 
-        Roket roket = new Roket();
-        pika1.setFlyable(roket);
-        pika1.performFlyable();
+        Pokemon playerPokemon, wildPokemon;
+        if(select == 1)
+            playerPokemon = new Pikachu();
+        else if (select == 2)
+            playerPokemon = new Squirtle();
+        else if (select == 3)
+            playerPokemon = new Charizard();
+        else
+            playerPokemon = new Pikachu(); // default
 
-//        pika1.info();
-//        s1.info();
+        System.out.println("A wild Pokémon has appeared.");
+        select = random.nextInt(3);
+        if(select == 0)
+            wildPokemon = new Pikachu("Pikachu", 50);
+        else if (select == 1)
+            wildPokemon = new Squirtle("Squirtle", 55);
+        else if (select == 2)
+            wildPokemon = new Charizard("Charizard", 74);
+        else
+            wildPokemon = new Pikachu("Pikachu", 50);
 
-//        pika1.attack(s1);
-//        s1.attack(pika1);
-//        c1.attack();
-//        c1.attack(pika1);
-//        c1.attack(s1);
 
-//        Squirtle s1 = new Squirtle("Squirtle", 70);
-//        Squirtle s2 = new Squirtle();
-//        System.out.println(pika1.getName());
-//        Pokemon p2 = new Pokemon("Squirtle", 70);
-//        System.out.println(s1.getName());
-//        s2.setName("Squirtle2");
-//        s2.setHp(65);
-
-//        Pokemon p1 = new Pokemon();
-//        System.out.println(p1.getName() + "'s health is " + p1.getHp() + ".");
-//        p1.setHp(50);
-//        p1.setName("Pikachu");
-//        System.out.println(p1.getName() + "'s health is " + p1.getHp() + ".");
-//        System.out.println(p2.getName() + "'s health is " + p2.getHp() + ".");
-
+        while(true){
+            System.out.print("1) Battle 2) Run away 3) Quit");
+            int menu = scanner.nextInt();
+            if (menu == 3){
+                System.out.println("Exit the Game");
+                break;
+            } else if (menu == 2){
+                System.out.println("You ran away from the battle.");
+            } else if (menu == 1){
+                playerPokemon.attack(wildPokemon);
+            }
+        }
     }
 }

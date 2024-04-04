@@ -3,6 +3,7 @@ package pokemons;
 public abstract class Pokemon{
     private String name;
     private int hp;
+    protected int attackPoint;
 
     public void setFlyable(Flyable flyable) {
         this.flyable = flyable;
@@ -18,13 +19,13 @@ public abstract class Pokemon{
     public Pokemon() {
         this.name = "nameless";
         this.hp = 10;
-        System.out.println("default constructor!");
+//        System.out.println("default constructor!");
     }
 
     public Pokemon(String name, int hp) {
         this.name = name;
         this.hp = hp;
-        System.out.println("parameter constructor~");
+//        System.out.println("parameter constructor~");
     }
 
     public String getName() {
