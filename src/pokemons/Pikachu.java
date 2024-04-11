@@ -1,5 +1,6 @@
 package pokemons;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Pikachu extends Pokemon {
     public Pikachu() {
@@ -14,15 +15,12 @@ public class Pikachu extends Pokemon {
 //        this.skills = new String[]{"cheeks bulging", "electric shock", "100,000 volts"};
 //        this.skillPoints = new Integer[]{20, 40, 90};
 
-        this.skills = new ArrayList<>();
-        this.skills.add("cheeks bulging");
-        this.skills.add("electric shock");
-        this.skills.add("100,000 volts");
-
-        this.skillPoints = new ArrayList<>();
-        this.skillPoints.add(20);
-        this.skillPoints.add(40);
-        this.skillPoints.add(90);
+        this.skills = new ArrayList<>(
+            Arrays.asList("cheeks bulging", "electric shock", "100,000 volts")
+        );
+        this.skillPoints = new ArrayList<>(
+            Arrays.asList(20, 40, 90)
+        );
 
         System.out.println("Pika Pika~");
     }
