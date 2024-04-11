@@ -1,12 +1,14 @@
 package pokemons;
 
+import java.util.List;
+
 public abstract class Pokemon{
     private String name;
     private int hp;
     protected int attackPoint;
 
-    protected String[] skills;
-    protected Integer[] skillPoints;
+    protected List<String> skills;
+    protected List<Integer> skillPoints;
 
     Flyable flyable;  // has-a
 

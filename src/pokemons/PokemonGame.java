@@ -43,7 +43,7 @@ public class PokemonGame {
             } else if (menu == 2){
                 System.out.println("You ran away from the battle.");
             } else if (menu == 1){
-                System.out.println("\t1) " + playerPokemon.skills[0] + " 2) " + playerPokemon.skills[1] + " 3) " + playerPokemon.skills[2] + "  : ");
+                System.out.println("\t1) " + playerPokemon.skills.get(0) + " 2) " + playerPokemon.skills.get(1) + " 3) " + playerPokemon.skills.get(2) + "  : ");
                 int skill = scanner.nextInt() - 1;
                 playerPokemon.attack(wildPokemon, skill);
                 if(wildPokemon.getHp() <= 0) {
