@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class PokemonGame {
     public static void main(String[] args) {
         Random random = new Random();
-        random.setSeed(33);
+        random.setSeed(0);
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Choose your {Pokemonster. 1) Pikachu(default)  2) Squirtle  3) Charizard : ");
@@ -35,7 +35,7 @@ public class PokemonGame {
 
 
         while(true){
-            System.out.print("1) Battle 2) Run away 3) Quit");
+            System.out.print("1) Battle 2) Run away 3) Quit  : ");
             int menu = scanner.nextInt();
             if (menu == 3){
                 System.out.println("Exit the Game");
@@ -43,15 +43,18 @@ public class PokemonGame {
             } else if (menu == 2){
                 System.out.println("You ran away from the battle.");
             } else if (menu == 1){
-                playerPokemon.attack(wildPokemon);
-                if(wildPokemon.getHp() <= 0){
+                System.out.println("\t1) " + playerPokemon.skills[0] + " 2) " + playerPokemon.skills[1] + " 3) " + playerPokemon.skills[2] + "  : ");
+                int skill = scanner.nextInt() - 1;
+                playerPokemon.attack(wildPokemon, skill);
+                if(wildPokemon.getHp() <= 0) {
                     System.out.println("You win!");
                     break;
-                }
-                wildPokemon.attack(playerPokemon);
-                if(playerPokemon.getHp() <= 0){
-                    System.out.println("You lose!");
-                    break;
+                } else {
+                    wildPokemon.attack(playerPokemon, random.nextInt(3));
+                    if(playerPokemon.getHp() <= 0) {
+                        System.out.println("You lose!");
+                        break;
+                    }
                 }
             }
         }

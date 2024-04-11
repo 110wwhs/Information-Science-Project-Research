@@ -10,6 +10,8 @@ public class Squirtle extends Pokemon{
         super(name, hp);
         super.setFlyable(new NoFly());
         this.attackPoint = 12;
+        this.skills = new String[] {"body slam", "water cannon", "hydro pump"};
+        this.skillPoints = new Integer[] {35,40,110};
         System.out.println("Crrrrrrr-");
     }
 
@@ -25,9 +27,17 @@ public class Squirtle extends Pokemon{
     }
 
     @Override
+    public void attack(Pokemon targetPokemon, int s) {
+        targetPokemon.setHp(targetPokemon.getHp() - (this.attackPoint + this.skillPoints[s]));
+        System.out.println(this.getName()+ " attacks " + targetPokemon.getName() + " with " + this.skills[s] + "!");
+        System.out.println(targetPokemon.getName() + " got damage " + (this.skillPoints[s] + this.attackPoint));
+        System.out.println(targetPokemon.getName() + " HP: " + targetPokemon.getHp() + "!");
+    }
+
+    @Override
     public void attack(Pokemon targetPokemon) {
         targetPokemon.setHp(targetPokemon.getHp() - this.attackPoint);
-        System.out.println(this.getName()+ " attacks " + targetPokemon.getName() + " with Water cannon!");
+        System.out.println(this.getName() + " attacks " + targetPokemon.getName() + " with Water cannon!");
         System.out.println(targetPokemon.getName() + " got damage " + this.attackPoint);
         System.out.println(targetPokemon.getName() + " HP: " + targetPokemon.getHp() + "!");
     }
