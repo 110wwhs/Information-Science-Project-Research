@@ -1,4 +1,4 @@
-package pokemons;
+ package pokemons;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -24,6 +24,7 @@ public class PokemonGame {
 //        Random random = new Random();
 //        random.setSeed(32);
 
+        @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
         System.out.print("Choose your pokemonster. 1) Pikachu(default)  2) Squirtle  3) Charizard : ");
         int select = scanner.nextInt();
@@ -38,7 +39,7 @@ public class PokemonGame {
         else
             playerPokemon = new Pikachu("Pikachu", 50);  // default
 
-        // enemyPokemon
+        // enemyPokemon Produce
         produceEnemyPokemon();
 
         while(true){

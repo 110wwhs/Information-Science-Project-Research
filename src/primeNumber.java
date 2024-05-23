@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class primeNumber {
     public static void main(String[] args) {
         boolean isPrimeNumber = true;
+        @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
         int numberStart = scanner.nextInt();
         int numberEnd = scanner.nextInt();

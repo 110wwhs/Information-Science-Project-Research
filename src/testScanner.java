@@ -5,6 +5,7 @@ public class testScanner {
         System.out.println("메세지를 입력해주세요.");
         System.out.println("프로그램을 종료하려면 q를 입력하세요.");
 
+        @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
         String inputString;
 
