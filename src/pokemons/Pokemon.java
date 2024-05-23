@@ -2,14 +2,16 @@ package pokemons;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.HashMap;
 
 public abstract class Pokemon{
-    private String name;
     private int hp;
     protected int attackPoint;
 
-    protected ArrayList skills;
-    protected List<Integer> skillPoints;
+    // protected ArrayList<String> skills; // Parameterize the ArrayList with the type String
+    // protected List<Integer> skillPoints;
+
+    protected HashMap<String, Integer> skills;
 
     Flyable flyable;  // has-a
 
@@ -27,6 +29,8 @@ public abstract class Pokemon{
         this.hp = 10;
         //System.out.println("default constructor!");
     }
+
+    private String name; // Declare the 'name' variable
 
     public Pokemon(String name, int hp) {
         this.name = name;

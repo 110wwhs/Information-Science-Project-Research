@@ -14,7 +14,7 @@ public class Charizard extends Pokemon {
         this.skills = new ArrayList<>(
                 Arrays.asList("claw", "dragon's breath", "flare drive")
         );
-
+        
         this.skillPoints = new ArrayList<>(
                 Arrays.asList(20, 40, 150)
         );
