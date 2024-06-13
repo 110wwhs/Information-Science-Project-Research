@@ -38,9 +38,9 @@ public class Squirtle extends Pokemon{
 
     @Override
     public void attack(Pokemon targetPokemon, int s) {
-        targetPokemon.setHp(targetPokemon.getHp() - (this.attackPoint + this.skillPoints.get(s)));
+        targetPokemon.setHp(targetPokemon.getHp() - (this.attackPoint + this.skillPoints.get(this.skills.get(s))));
         System.out.println(this.getName()+ " attacks " + targetPokemon.getName() + " with " + this.skills.get(s) + "!");
-        System.out.println(targetPokemon.getName() + " got damage " + (this.skillPoints.get(s) + this.attackPoint));
+        System.out.println(targetPokemon.getName() + " got damage " + (this.skillPoints.get(this.skills.get(s)) + this.attackPoint));
         System.out.println(targetPokemon.getName() + " HP: " + targetPokemon.getHp() + "!");
     }
 

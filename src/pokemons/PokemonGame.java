@@ -24,7 +24,6 @@ public class PokemonGame {
 //        Random random = new Random();
 //        random.setSeed(32);
 
-        @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
         System.out.print("Choose your pokemonster. 1) Pikachu(default)  2) Squirtle  3) Charizard : ");
         int select = scanner.nextInt();
@@ -49,8 +48,8 @@ public class PokemonGame {
                 System.out.println("Exit the program...");
                 break;
             } else if (menu == 1) {
-                System.out.print("\t1) " + playerPokemon.skills.get("skill1") + "  2) " + playerPokemon.skills.get("skill2") + "  3) " + playerPokemon.skills.get("skill3") + "  : ");
-                int skill = scanner.nextInt() - 1;
+                System.out.print("\t1) " + playerPokemon.skills.get(1) + "  2) " + playerPokemon.skills.get(2) + "  3) " + playerPokemon.skills.get(3) + "  : ");
+                int skill = scanner.nextInt();
                 playerPokemon.attack(wildPokemon, skill);
                 System.out.println("=====================");
                 wildPokemon.attack(playerPokemon, skill);

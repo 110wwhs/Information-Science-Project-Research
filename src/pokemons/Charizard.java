@@ -15,7 +15,7 @@ public class Charizard extends Pokemon {
         skills.put(2, "dragon's breath");
         skills.put(3, "flare drive");
 
-        this.skillPoints = new Map<Integer, String>;
+        this.skillPoints = new HashMap<>();
         skillPoints.put("claw", 20);
         skillPoints.put("dragon's breath", 40);
         skillPoints.put("flare drive", 90);
@@ -36,9 +36,9 @@ public class Charizard extends Pokemon {
 
     @Override
     public void attack(Pokemon targetPokemon, int s) {
-        targetPokemon.setHp(targetPokemon.getHp() - (this.attackPoint + this.skillPoints.get(s)));
+        targetPokemon.setHp(targetPokemon.getHp() - (this.attackPoint + this.skillPoints.get(this.skills.get(s))));
         System.out.println(this.getName()+ " attacks " + targetPokemon.getName() + " with " + this.skills.get(s) + "!");
-        System.out.println(targetPokemon.getName() + " got damage " + (this.skillPoints.get(s) + this.attackPoint));
+        System.out.println(targetPokemon.getName() + " got damage " + (this.skillPoints.get(this.skills.get(s)) + this.attackPoint));
         System.out.println(targetPokemon.getName() + " HP: " + targetPokemon.getHp() + "!");
     }
 

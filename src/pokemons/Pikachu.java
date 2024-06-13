@@ -37,7 +37,7 @@ public class Pikachu extends Pokemon {
 
     @Override
     public void attack(Pokemon targetPokemon, int s) {
-        targetPokemon.setHp(targetPokemon.getHp() - (this.attackPoint + this.skills.get(String.valueOf(s))));
+        targetPokemon.setHp(targetPokemon.getHp() - (this.attackPoint + this.skillPoints.get(this.skills.get(s))));
         System.out.println(this.getName()+ " attacks " + targetPokemon.getName() + " with " + this.skills.get(String.valueOf(s)) + "!");
         System.out.println(targetPokemon.getName() + " got damage " + (this.skills.get(String.valueOf(s)) + this.attackPoint));
         System.out.println(targetPokemon.getName() + " HP: " + targetPokemon.getHp() + "!");

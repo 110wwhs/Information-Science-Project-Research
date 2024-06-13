@@ -11,6 +11,7 @@ public abstract class Pokemon{
 
     protected Map<Integer, String> skills;
     protected Map<String, Integer> skillPoints;
+    private Flyable flyable;
 
     public void setFlyable(Flyable flyable) {
         this.flyable = flyable;
