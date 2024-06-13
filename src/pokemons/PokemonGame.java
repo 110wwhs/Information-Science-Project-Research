@@ -1,5 +1,6 @@
 package pokemons;
 
+import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -25,7 +26,7 @@ public class PokemonGame {
 //        random.setSeed(32);
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Choose your pokemonster. 1) Pikachu(default)  2) Squirtle  3) Charizard : ");
+        System.out.print("Choose your Pokemonster. 1) Pikachu(default)  2) Squirtle  3) Charizard : ");
         int select = scanner.nextInt();
 
         Pokemon playerPokemon;
@@ -48,11 +49,16 @@ public class PokemonGame {
                 System.out.println("Exit the program...");
                 break;
             } else if (menu == 1) {
-                System.out.print("\t1) " + playerPokemon.skills.get(1) + "  2) " + playerPokemon.skills.get(2) + "  3) " + playerPokemon.skills.get(3) + "  : ");
-                int skill = scanner.nextInt();
-                playerPokemon.attack(wildPokemon, skill);
+//                System.out.print("\t1) " + playerPokemon.skills.get(1) + "  2) " + playerPokemon.skills.get(2) + "  3) " + playerPokemon.skills.get(3) + "  : ");
+//                int skill = scanner.nextInt();
+
+                for(Map.Entry<Integer, String> mapSill : playerPokemon.skills.entrySet()) {
+                    System.out.println(mapSill.getKey() + ") " + mapSill.getValue());
+                }
+
+                playerPokemon.attack(wildPokemon, scanner.nextInt());
                 System.out.println("=====================");
-                wildPokemon.attack(playerPokemon, skill);
+                wildPokemon.attack(playerPokemon, scanner.nextInt());
             } else if (menu == 2) {
                 System.out.println("The player's Pokémon runs away.");
                 playerPokemon.performFly();
