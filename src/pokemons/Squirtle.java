@@ -1,6 +1,5 @@
 package pokemons;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
 public class Squirtle extends Pokemon{
     public Squirtle() {
@@ -14,13 +13,15 @@ public class Squirtle extends Pokemon{
 //        this.skills = new String[]{"body slam", "water canon", "hydro pump"};
 //        this.skillPoints = new Integer[]{35, 40, 110};
 
-        this.skills = new ArrayList<>(
-                Arrays.asList("body slam", "water canon", "hydro pump")
-        );
+        this.skills = new HashMap<>();
+        skills.put(1, "body slam");
+        skills.put(2, "water canon");
+        skills.put(3, "hydro pump");
 
-        this.skillPoints = new ArrayList<>(
-                Arrays.asList(35, 40, 110)
-        );
+        this.skillPoints = new HashMap<>();
+        skillPoints.put("body slam", 35);
+        skillPoints.put("water canon", 40);
+        skillPoints.put("hydro pump", 110);
 
         System.out.println("Crrrrrrrr~");
     }

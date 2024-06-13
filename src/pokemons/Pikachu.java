@@ -1,6 +1,4 @@
 package pokemons;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 
 public class Pikachu extends Pokemon {
@@ -13,11 +11,15 @@ public class Pikachu extends Pokemon {
         super.setFlyable(new NoFly());
         this.attackPoint = 15;
 
-        this.skills = new HashMap<String, Integer>() {{
-            put("cheeks bulging", 20);
-            put("electric shock", 40);
-            put("100,000", 90);
-        }};
+        this.skills = new HashMap<>();
+        skills.put(1, "cheeks bulging");
+        skills.put(2, "electric shock");
+        skills.put(3, "100,000 volts");
+
+        this.skillPoints = new HashMap<>();
+        skillPoints.put("cheeks bulging", 20);
+        skillPoints.put("electric shock", 40);
+        skillPoints.put("100,000 volts", 90);
 
         System.out.println("Pika Pika~");
     }
