@@ -52,9 +52,11 @@ public class PokemonGame {
 //                System.out.print("\t1) " + playerPokemon.skills.get(1) + "  2) " + playerPokemon.skills.get(2) + "  3) " + playerPokemon.skills.get(3) + "  : ");
 //                int skill = scanner.nextInt();
 
-                for(Map.Entry<Integer, String> mapSill : playerPokemon.skills.entrySet()) {
-                    System.out.println(mapSill.getKey() + ") " + mapSill.getValue());
-                }
+                // for(Map.Entry<Integer, String> mapSill : playerPokemon.skills.entrySet()) {
+                //     System.out.println(mapSill.getKey() + ") " + mapSill.getValue());
+                // }
+
+                playerPokemon.getSkills().forEach((k, v) -> System.out.println(k + ") " + v));
 
                 playerPokemon.attack(wildPokemon, scanner.nextInt());
                 System.out.println("=====================");
